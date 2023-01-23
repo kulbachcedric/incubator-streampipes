@@ -37,11 +37,11 @@ class Config(object):
         if not default:
             raise ValueError
 
-        if type is 'host':
+        if type == 'host':
             self.host = self._env_or_default(env_key, default)
-        elif type is 'port':
+        elif type == 'port':
             self.port = self._env_or_default(env_key, default)
-        elif type is 'service':
+        elif type == 'service':
             self.service = self._env_or_default(env_key, default)
 
         config_item = self._create_config_item(env_key, default, description, configuration_scope, is_password)
